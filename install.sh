@@ -27,6 +27,12 @@ echo "Setting up git..."
 backup_if_exists ~/.gitconfig
 ln -sf "$DOTFILES_DIR/git/config" ~/.gitconfig
 
+#zshrc
+echo "setting up Zsh"
+backup_if_exists ~/.zshrc
+ln -sf "$DOTFILES_DIR/zsh/zshrc" ~/.zshrc
+
 echo "Dotfiles install complete"
+echo "Note restart your shell or run source ~/.zshrc to reload config"
 
 

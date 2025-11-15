@@ -1,0 +1,49 @@
+export STARSHIP_CONFIG="$HOME/.home/config/starship/starship.toml"
+eval "$(starship init zsh)"
+export PATH="$PATH/bin/"
+export PATH="/opt/homebrew/bin:$PATH"
+alias vim=nvim
+
+function claude-tmux() {
+  if tmux has-session -t claude 2>/dev/null; then
+    tmux attach -t claude
+  else
+    tmux new -s claude
+  fi
+}
+
+function side-project-tmux() {
+  if tmux has-session -t side-project 2>/dev/null; then
+    tmux attach -t side-project
+  else
+    tmux new -s side-project
+  fi
+}
+
+# source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+# boot.dev course
+export PATH="$PATH:/Users/henrikpersson/worldbanc/private/bin"
+
+#github configs
+
+alias gs = "git status"
+
+alias gd = "git diff --output-indicator-new=' ' --output-indicator-old=' '"
+alias gds = "git diff --staged"
+alias ga = "git add" 
+alias gap= "git add --patch"
+alias gc = "git commit"  
+
+alias gp = "git push"  
+alias gu = "git pull"  
+
+alias gl = "git log"  
+alias gb = "git branch"  
+
+alias gi = "git init"  
+alias gcl = "git clone"  
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

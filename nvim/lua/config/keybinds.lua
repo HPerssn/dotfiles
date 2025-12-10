@@ -1,5 +1,9 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
+
+vim.keymap.set("n", "<leader>R", function()
+    require("lazy").reload({ plugins = true })
+    dofile(vim.fn.stdpath("config") .. "/init.lua")
+end, { desc = "Full config reload" })
 
 -- buffers
 vim.keymap.set("n", "<leader>n", ":bn<cr>")
